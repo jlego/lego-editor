@@ -1,40 +1,40 @@
-Legoeditor = require '../lib/legoeditor'
+LegoEditor = require '../lib/lego-editor'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
 # To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe "Legoeditor", ->
+describe "LegoEditor", ->
   [workspaceElement, activationPromise] = []
 
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('legoeditor')
+    activationPromise = atom.packages.activatePackage('lego-editor')
 
-  describe "when the legoeditor:toggle event is triggered", ->
+  describe "when the lego-editor:toggle event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
-      expect(workspaceElement.querySelector('.legoeditor')).not.toExist()
+      expect(workspaceElement.querySelector('.lego-editor')).not.toExist()
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'legoeditor:toggle'
+      atom.commands.dispatch workspaceElement, 'lego-editor:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
-        expect(workspaceElement.querySelector('.legoeditor')).toExist()
+        expect(workspaceElement.querySelector('.lego-editor')).toExist()
 
-        legoeditorElement = workspaceElement.querySelector('.legoeditor')
-        expect(legoeditorElement).toExist()
+        legoEditorElement = workspaceElement.querySelector('.lego-editor')
+        expect(legoEditorElement).toExist()
 
-        legoeditorPanel = atom.workspace.panelForItem(legoeditorElement)
-        expect(legoeditorPanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'legoeditor:toggle'
-        expect(legoeditorPanel.isVisible()).toBe false
+        legoEditorPanel = atom.workspace.panelForItem(legoEditorElement)
+        expect(legoEditorPanel.isVisible()).toBe true
+        atom.commands.dispatch workspaceElement, 'lego-editor:toggle'
+        expect(legoEditorPanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
       # This test shows you an integration test testing at the view level.
@@ -45,18 +45,18 @@ describe "Legoeditor", ->
       # workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement)
 
-      expect(workspaceElement.querySelector('.legoeditor')).not.toExist()
+      expect(workspaceElement.querySelector('.lego-editor')).not.toExist()
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'legoeditor:toggle'
+      atom.commands.dispatch workspaceElement, 'lego-editor:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
         # Now we can test for view visibility
-        legoeditorElement = workspaceElement.querySelector('.legoeditor')
-        expect(legoeditorElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'legoeditor:toggle'
-        expect(legoeditorElement).not.toBeVisible()
+        legoEditorElement = workspaceElement.querySelector('.lego-editor')
+        expect(legoEditorElement).toBeVisible()
+        atom.commands.dispatch workspaceElement, 'lego-editor:toggle'
+        expect(legoEditorElement).not.toBeVisible()

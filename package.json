@@ -1,13 +1,13 @@
 {
-  "name": "legoeditor",
-  "main": "./lib/legoeditor",
+  "name": "lego-editor",
+  "main": "./lib/lego-editor",
   "version": "0.0.0",
   "description": "A short description of your package",
   "keywords": [],
   "activationCommands": {
-    "atom-workspace": "legoeditor:toggle"
+    "atom-workspace": "lego-editor:toggle"
   },
-  "repository": "https://github.com/atom/legoeditor",
+  "repository": "https://github.com/atom/lego-editor",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

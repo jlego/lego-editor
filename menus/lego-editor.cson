@@ -2,19 +2,19 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Toggle legoeditor'
-      'command': 'legoeditor:toggle'
+      'label': 'Toggle lego-editor'
+      'command': 'lego-editor:toggle'
     }
   ]
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'legoeditor'
+      'label': 'lego-editor'
       'submenu': [
         {
           'label': 'Toggle'
-          'command': 'legoeditor:toggle'
+          'command': 'lego-editor:toggle'
         }
       ]
     ]
