@@ -1,6 +1,6 @@
 {
   "name": "lego-editor",
-  "main": "./lib/lego-editor",
+  "main": "./lib/main",
   "version": "0.1.0",
   "description": "A short description of your package",
   "keywords": [],
@@ -15,5 +15,8 @@
   "dependencies": {
     "lego-core": "^1.6.9",
     "lego-ui": "^0.3.0"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1"
   }
 }

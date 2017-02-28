@@ -26,4 +26,4 @@ class LegoEditor {
          );
     }
 }
-export default LegoEditor;
+export default new LegoEditor();
