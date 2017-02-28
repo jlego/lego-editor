@@ -16,9 +16,9 @@ class LegoEditor {
     }
     deactivate () {
       console.warn('oooooooo');
-        // this.modalPanel.destroy();
+        this.modalPanel.destroy();
         this.subscriptions.dispose();
-        // this.view.destroy();
+        this.view.destroy();
     }
     toggle() {
          console.log('Sourcefetch was toggled!');
