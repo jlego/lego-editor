@@ -4,26 +4,29 @@ import {Emitter, CompositeDisposable} from 'atom';
 
 class LegoEditor {
     constructor(opts = {}){
-        console.warn('dddddddddddddd');
+        console.warn('8888888888');
         this.emitter = new Emitter();
+        this.subscriptions = new CompositeDisposable();
     }
     activate (state) {
         this.view = new View();
-        this.modalPanel = atom.workspace.addModalPanel({item: this.view.getElement(), visible: false});
-        this.subscriptions = new CompositeDisposable();
+        this.subscriptions.add(atom.commands.add('atom-workspace', {
+          'lego-editor:toggle': () => this.toggle()
+        }));
     }
     deactivate () {
-        this.modalPanel.destroy();
+      console.warn('oooooooo');
+        // this.modalPanel.destroy();
         this.subscriptions.dispose();
-        this.view.destroy();
+        // this.view.destroy();
     }
     toggle() {
          console.log('Sourcefetch was toggled!');
-         return (
-           this.modalPanel.isVisible() ?
-           this.modalPanel.hide() :
-           this.modalPanel.show()
-         );
+         if(!this.modalPanel){
+           this.modalPanel = atom.workspace.addRightPanel({item: this.view.getElement(), visible: false});
+         }else{
+           this.modalPanel.isVisible() ? this.modalPanel.hide() : this.modalPanel.show();
+         }
     }
 }
 export default new LegoEditor();
