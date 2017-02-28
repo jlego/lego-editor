@@ -1,4 +1,4 @@
-# legoeditor package
+# lego-editor package
 
 A short description of your package.
 
