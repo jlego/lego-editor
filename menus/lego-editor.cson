@@ -2,7 +2,7 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Toggle lego-editor'
+      'label': '启动/关闭 lego-editor'
       'command': 'lego-editor:toggle'
     }
   ]
@@ -13,7 +13,7 @@
       'label': 'lego-editor'
       'submenu': [
         {
-          'label': 'Toggle'
+          'label': '启动/关闭'
           'command': 'lego-editor:toggle'
         }
       ]
